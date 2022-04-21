@@ -12,7 +12,7 @@
     "unpdf_logs_ms": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "api/logs",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
