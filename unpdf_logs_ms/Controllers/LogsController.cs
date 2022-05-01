@@ -33,6 +33,10 @@ public class LogsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post(Log newLog)
     {
+        DateTime now = DateTime.Now;
+        
+        newLog.Date = now.Add(new TimeSpan(-5, 0, 0));
+
         await _logsService.CreateAsync(newLog);
 
         return CreatedAtAction(nameof(Get), new { id = newLog.Id }, newLog);
