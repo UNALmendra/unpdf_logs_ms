@@ -18,14 +18,16 @@ public class LogsController : ControllerBase
         await _logsService.GetAsync();
 
     [HttpGet("(id)")]
-    public async Task<ActionResult<Log>> Get(string id)
+    public async Task<List<Log>> Get(string id)
     {
         var book = await _logsService.GetAsync(id);
 
+        /*
         if (book is null)
         {
             return NotFound();
         }
+        */
 
         return book;
     }

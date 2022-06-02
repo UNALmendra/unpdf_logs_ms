@@ -24,8 +24,8 @@ public class LogsService
     public async Task<List<Log>> GetAsync() =>
         await _logsCollection.Find(_ => true).ToListAsync();
 
-    public async Task<Log?> GetAsync(string id) =>
-        await _logsCollection.Find(x => x.Doc == id).FirstOrDefaultAsync();
+    public async Task<List<Log>> GetAsync(string id) =>
+        await _logsCollection.Find(x => x.Doc == id).ToListAsync();
 
     public async Task CreateAsync(Log newLog) =>
         await _logsCollection.InsertOneAsync(newLog);
