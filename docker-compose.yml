@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  unpdf_logs_mq:
+    container_name: "unpdf_logs_mq"
+    image: rabbitmq:3.8-management-alpine
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=masterkey
+    ports:
+      # AMQP protocol port
+      - '5672:5672'
+      # HTTP management UI
+      - '15672:15672'
+  unpdf_logs_ms:
+    build: .
+    ports:
+      - "9155:80"
+      - "9156:443"
+    depends_on:
+      - unpdf_logs_mq
