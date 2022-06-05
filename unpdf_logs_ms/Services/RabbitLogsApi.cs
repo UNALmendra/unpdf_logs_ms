@@ -28,7 +28,7 @@ namespace unpdf_logs_ms.Services
             _channel = _connection.CreateModel();
 
             _channel.QueueDeclare(
-                queue: "logs",
+                queue: "logsq",
                 durable: true,
                 exclusive: false,
                 autoDelete: false,
