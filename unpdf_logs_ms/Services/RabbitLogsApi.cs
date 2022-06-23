@@ -21,7 +21,7 @@ namespace unpdf_logs_ms.Services
         {
             _sp = sp;
 
-            _factory = new ConnectionFactory() { HostName = "host.docker.internal", UserName = "admin", Password = "masterkey" };
+            _factory = new ConnectionFactory() { HostName = "jibaxwat:88ybgMEn947unxotHn1U6v-WwhSzT79B@albatross.rmq.cloudamqp.com/jibaxwat", UserName = "jibaxwat", Password = "88ybgMEn947unxotHn1U6v-WwhSzT79B" };
 
             _connection = _factory.CreateConnection();
 
